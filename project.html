@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project â€” RUT NOEMI</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <a class="brand" href="index.html">RUT NOEMI</a>
+  <nav>
+    <ul>
+      <li><a href="index.html#work">Trabajos</a></li>
+      <li><a href="index.html#about">Sobre Mí</a></li>
+      <li><a href="index.html#services">Servicios</a></li>
+      <li><a href="index.html#contact">Contacto</a></li>
+    </ul>
+  </nav>
+  <button class="menu-btn">Menú</button>
+</header>
+
+<div id="menu">
+  <button id="close-menu">Cerrar</button>
+  <a href="index.html#work">Trabajos</a>
+  <a href="index.html#about">Sobre Mí</a>
+  <a href="index.html#services">Servicios</a>
+  <a href="index.html#contact">Contacto</a>
+</div>
+
+<section class="project-hero" style="padding:0;">
+  <img id="p-hero" src="assets/hero.jpg" alt="Project hero">
+</section>
+
+<div class="project-intro">
+  <h1 id="p-title">â€”</h1>
+  <p class="kicker" id="p-meta" style="margin-bottom:26px;">â€”</p>
+  <p id="p-desc">â€”</p>
+</div>
+
+<div class="gallery" id="gallery"></div>
+
+<p class="credits" id="credits">â€”</p>
+
+<a class="next-project" id="next-link" href="#">
+  <span>NEXT PROJECT â†’</span>
+  <h3 id="next-name">â€”</h3>
+</a>
+
+<footer>
+  <span>Â© 2026 RUT NOEMI</span>
+  <span>Fotografía / Historias Visuales</span>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/projects.js"></script>
+<script>
+// re-observe gallery figures created dynamically
+const io2 = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io2.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('#gallery figure').forEach(el => io2.observe(el));
+</script>
+</body>
+</html>
+
